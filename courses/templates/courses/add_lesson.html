@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить урок</title>
+</head>
+<body>
+    <h1>Добавить урок в курс "{{ course.title }}"</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить урок</button>
+    </form>
+    <a href="{% url 'course_detail' pk=course.id %}">Назад к курсу</a>
+</body>
+</html>
